@@ -1,0 +1,48 @@
+<div class="container mt-5 mb-5">
+    <div class="mat-elevation-z8">
+        <mat-card class="example-card">
+            <mat-card-header>
+                <mat-card-title>Editar Empleado</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <form class="example-form">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Id</mat-label>
+                        <input matInput [(ngModel)]="globalVariablesService.employee.id" name="id" required #id="ngModel">
+                        <mat-error *ngIf="id.invalid && id.touched">
+                            Usuario es <strong>requerido</strong>
+                        </mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Body</mat-label>
+                        <input matInput [(ngModel)]="globalVariablesService.employee.body" name="body" required #body="ngModel">
+                        <mat-error *ngIf="body.invalid && body.touched">
+                            Usuario es <strong>requerido</strong>
+                        </mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Title</mat-label>
+                        <input matInput [(ngModel)]="globalVariablesService.employee.title" name="title" required #title="ngModel">
+                        <mat-error *ngIf="title.invalid && title.touched">
+                            Usuario es <strong>requerido</strong>
+                        </mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width">
+                        <mat-label>UserId</mat-label>
+                        <input matInput [(ngModel)]="globalVariablesService.employee.userId" name="userId" required #userId="ngModel">
+                        <mat-error *ngIf="userId.invalid && userId.touched">
+                            Usuario es <strong>requerido</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </form>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-raised-button color="primary" type="button">Guardar</button>
+                <button mat-raised-button color="warn" type="button">Cancelar</button>
+            </mat-card-actions>
+        </mat-card>
+
+    </div>
+</div>
