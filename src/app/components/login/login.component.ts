@@ -18,6 +18,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     localStorage.clear();
+    sessionStorage.clear();
     this.getToken();
   }
 
@@ -40,6 +41,7 @@ export class LoginComponent implements OnInit {
     this.apiLoginService.postLogin(params).subscribe(
       (res:resultModel) => {
         if (res.isSuccess) {
+          sessionStorage.setItem('user', JSON.stringify( res.isSuccess ));
           this.router.navigateByUrl('list');
         }
       })

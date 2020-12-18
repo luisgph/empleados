@@ -67,4 +67,8 @@ export class HttpBaseService {
   public delete(endPoint: string, params?: any) {
     return this.usingHttpServices(endPoint, 'delete', params);
   }
+
+  public isAuthenticate():boolean{
+    return sessionStorage.getItem('user') !== null;
+  }
 }

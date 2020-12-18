@@ -4,13 +4,14 @@ import { ListEmployeesComponent } from './components/employees/list-employees/li
 import { AddEmployeesComponent } from './components/employees/add-employees/add-employees.component';
 import { EditEmployeesComponent } from './components/employees/edit-employees/edit-employees.component';
 import { LoginComponent } from './components/login/login.component';
+import { AuthGuard } from './guards/auth.guard';
 
 
 const routes: Routes = [
   { path : 'login', component : LoginComponent },
-  { path : 'list', component : ListEmployeesComponent },
-  { path : 'add', component : AddEmployeesComponent },
-  { path : 'edit', component : EditEmployeesComponent },
+  { path : 'list', component : ListEmployeesComponent , canActivate : [AuthGuard] },
+  { path : 'add', component : AddEmployeesComponent,  canActivate : [AuthGuard] },
+  { path : 'edit', component : EditEmployeesComponent,  canActivate : [AuthGuard] },
   { path : '**', pathMatch : 'full',  redirectTo : 'login' }
 ];
 
