@@ -16,7 +16,6 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
-import { NavbarComponent } from './shared/navbar/navbar.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 
@@ -27,7 +26,6 @@ import { MatCardModule } from '@angular/material/card';
     AddEmployeesComponent,
     EditEmployeesComponent,
     LoginComponent,
-    NavbarComponent
   ],
   imports: [
     BrowserModule,

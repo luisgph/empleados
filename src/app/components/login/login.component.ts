@@ -3,6 +3,7 @@ import { userModel } from '../../models/user.model';
 import { Router } from '@angular/router';
 import { ApiLoginService } from '../../services/api-login.service';
 import { resultModel } from '../../models/resultModel';
+import { ToolsService } from '../../services/tools.service';
 
 
 @Component({
@@ -14,7 +15,7 @@ export class LoginComponent implements OnInit {
 
   public user:userModel = new userModel();
 
-  constructor( private router: Router, private apiLoginService:ApiLoginService) { }
+  constructor( private router: Router, private apiLoginService:ApiLoginService, private toolsService:ToolsService) { }
 
   ngOnInit(): void {
     localStorage.clear();
@@ -43,6 +44,8 @@ export class LoginComponent implements OnInit {
         if (res.isSuccess) {
           sessionStorage.setItem('user', JSON.stringify( res.isSuccess ));
           this.router.navigateByUrl('list');
+        }else{
+          this.toolsService.showMessage('error', res.message);
         }
       })
   }
