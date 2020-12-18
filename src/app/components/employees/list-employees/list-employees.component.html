@@ -1,29 +1,37 @@
 <div class="container mt-5 mb-5">
+    <h1>Lista empleados</h1>
+    <hr>
+    <button mat-raised-button (click)="add()" color="primary" class="mb-2"> Adicionar </button>
     <div class="mat-elevation-z8">
-        <table mat-table [dataSource]="dataSource">
-
-            <!-- Position Column -->
-            <ng-container matColumnDef="id">
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+            <!-- employeeId Column -->
+            <ng-container matColumnDef="employeeId">
                 <th mat-header-cell *matHeaderCellDef> Id. </th>
-                <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+                <td mat-cell *matCellDef="let element"> {{element.employeeId}} </td>
             </ng-container>
 
-            <!-- Name Column -->
-            <ng-container matColumnDef="body">
-                <th mat-header-cell *matHeaderCellDef> Body </th>
-                <td mat-cell *matCellDef="let element"> {{element.body}} </td>
+            <!-- numberId Column -->
+            <ng-container matColumnDef="numberId">
+                <th mat-header-cell *matHeaderCellDef> Identificación </th>
+                <td mat-cell *matCellDef="let element"> {{element.numberId | number}} </td>
             </ng-container>
 
-            <!-- Weight Column -->
-            <ng-container matColumnDef="title">
-                <th mat-header-cell *matHeaderCellDef> Title </th>
-                <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+            <!-- name Column -->
+            <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef> Nombre </th>
+                <td mat-cell *matCellDef="let element"> {{element.name}} </td>
             </ng-container>
 
-            <!-- Symbol Column -->
-            <ng-container matColumnDef="userId">
-                <th mat-header-cell *matHeaderCellDef> UserId </th>
-                <td mat-cell *matCellDef="let element"> {{element.userId}} </td>
+            <!-- lastname Column -->
+            <ng-container matColumnDef="lastName">
+                <th mat-header-cell *matHeaderCellDef> Apellidos </th>
+                <td mat-cell *matCellDef="let element"> {{element.lastName}} </td>
+            </ng-container>
+
+            <!-- role Column -->
+            <ng-container matColumnDef="role">
+                <th mat-header-cell *matHeaderCellDef> Cargo </th>
+                <td mat-cell *matCellDef="let element"> {{element.role}} </td>
             </ng-container>
 
             <ng-container matColumnDef="Editar">

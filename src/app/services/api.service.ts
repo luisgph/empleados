@@ -10,18 +10,14 @@ export class ApiService {
   constructor(public http : HttpBaseService) { }
 
   public getEmployees(): Observable<any> {
-    return this.http.get('GetListLenguages');
+    return this.http.get('Employee');
   }
 
-  public getTest(): Observable<any> {
-    return this.http.get('posts');
+  public postAddEmployees(params : any ): Observable<any> {
+    return this.http.post('Employee/InsertEmployee', params);
   }
 
-  public postAddEmployees(): Observable<any> {
-    return this.http.post('GetListLenguages');
-  }
-
-  public postEditEmployees(): Observable<any> {
-    return this.http.post('GetListLenguages');
+  public postEditEmployees(params : any ): Observable<any> {
+    return this.http.post('Employee/UpdateEmployee', params);
   }
 }

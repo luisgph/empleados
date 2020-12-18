@@ -1,1 +1,45 @@
-<p>add-employees works!</p>
+<div class="container mt-5 mb-5">
+    <h1>Crear empleado</h1>
+    <hr>
+    <div class="mat-elevation-z8">
+        <form class="example-form" (ngSubmit)="save()" #forma="ngForm">
+            <mat-card class="example-card">
+                <mat-card-content>
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Identificación</mat-label>
+                        <input matInput [(ngModel)]="numberId" name="numberId" required #fieldNumberId="ngModel" (keypress)="toolsService.numberOnly($event)" onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false">
+                        <mat-error *ngIf="fieldNumberId.invalid && fieldNumberId.touched">
+                            Identificación es <strong>requerido</strong>
+                        </mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Nombre</mat-label>
+                        <input matInput [(ngModel)]="name" name="name" required #fieldName="ngModel">
+                        <mat-error *ngIf="fieldName.invalid && fieldName.touched">
+                            Nombre es <strong>requerido</strong>
+                        </mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Apellidos</mat-label>
+                        <input matInput [(ngModel)]="lastName" name="lastname" required #fieldLastname="ngModel">
+                        <mat-error *ngIf="fieldLastname.invalid && fieldLastname.touched">
+                            Apellidos es <strong>requerido</strong>
+                        </mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Cargo</mat-label>
+                        <input matInput [(ngModel)]="role" name="role" required #fieldRole="ngModel">
+                        <mat-error *ngIf="fieldRole.invalid && fieldRole.touched">
+                            Cargo es <strong>requerido</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button mat-raised-button color="primary" type="submit" [disabled]="!(forma.valid)">Guardar</button>
+                    <button mat-raised-button color="warn" type="button" (click)="cancel()">Cancelar</button>
+                </mat-card-actions>
+            </mat-card>
+        </form>
+    </div>
+</div>

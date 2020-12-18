@@ -1,7 +1,7 @@
 export interface employeeModel{
-    id:string;
+    employeeId:number;
     name:string;
     lastName:string;
-    identity:string;
-    position:string;
+    numberId:string;
+    role:string;
 }

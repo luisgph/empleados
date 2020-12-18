@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { environment } from '../../environments/environment';
-// import { TokenService } from './token.service';
 
 @Injectable({
   providedIn: 'root'
@@ -9,16 +8,20 @@ import { environment } from '../../environments/environment';
 
 export class HttpBaseService {
 
-  private uri_api = environment.API;
+  private uri_api = environment.uri_api;
   private headers: HttpHeaders;
 
   constructor(public http: HttpClient) { }
 
   private getHttpHeadersConfigs() {
     let headers: HttpHeaders = new HttpHeaders();
-    // let token = localStorage.getItem('requestT');
+    const token = localStorage.getItem('token');
 
-    // headers = headers.append('Authorization',  token);
+    if (token) {
+      headers = headers.append('Authorization', 'Bearer ' + token);
+    } else {
+      headers = headers.append('ClientId', environment.clientId);
+    }
     headers.set('Content-Type', 'application/json; charset=utf-8');
     headers.set('X-Frame-Options', 'SAMEORIGIN');
     return headers;

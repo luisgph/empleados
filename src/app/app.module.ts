@@ -14,7 +14,6 @@ import { FormsModule } from "@angular/forms";
 //Material
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
-import { MainComponent } from './components/main/main.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { NavbarComponent } from './shared/navbar/navbar.component';
@@ -28,7 +27,6 @@ import { MatCardModule } from '@angular/material/card';
     AddEmployeesComponent,
     EditEmployeesComponent,
     LoginComponent,
-    MainComponent,
     NavbarComponent
   ],
   imports: [
